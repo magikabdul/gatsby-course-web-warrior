@@ -3,5 +3,5 @@ module.exports = {
     siteUrl: 'https://www.yourdomain.tld',
     title: 'Web Warrior',
   },
-  plugins: ['gatsby-plugin-sass'],
+  plugins: ['gatsby-plugin-sass', 'gatsby-plugin-root-import'],
 };
