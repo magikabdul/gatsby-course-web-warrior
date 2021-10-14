@@ -1,16 +1,30 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import 'src/components/molecules/NavBar/navbar.scss'
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import 'src/components/molecules/NavBar/navbar.scss';
 
-const Navbar = () => (
-  <nav>
-    <h1>Web Warrior</h1>
-    <div className='links'>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/projects">Portfolio Projects</Link>
-    </div>
-  </nav>
-)
+const Navbar = () => {
+  const data = useStaticQuery(graphql`
+    query SiteInfo {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  const { title } = data.site.siteMetadata;
+
+  return (
+    <nav>
+      <h1>{title}</h1>
+      <div className='links'>
+        <Link to='/'>Home</Link>
+        <Link to='/about'>About</Link>
+        <Link to='/projects'>Portfolio Projects</Link>
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;
