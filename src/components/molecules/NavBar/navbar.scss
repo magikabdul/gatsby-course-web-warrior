@@ -1,0 +1,21 @@
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 40px auto;
+
+  & .links {
+    text-align: right;
+  }
+
+  & a {
+    display: inline-block;
+    margin-left: 20px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid transparent;
+    transition: all 200ms ease-in-out;
+  }
+
+  & a:hover {
+    border-color: white;
+  }
+}
