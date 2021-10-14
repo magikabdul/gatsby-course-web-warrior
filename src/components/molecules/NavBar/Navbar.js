@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import 'src/components/molecules/NavBar/navbar.scss'
 
 const Navbar = () => (
   <nav>
